@@ -117,4 +117,5 @@ test.py
 zcrm-tokens.json
 *.json
 *.csv
+*.csv#
 
