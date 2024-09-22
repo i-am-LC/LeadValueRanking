@@ -197,6 +197,11 @@ if __name__ == '__main__':
     
     # Save results to CSV
     result.to_csv('detailed_results.csv', index=False)
+
+    # Drop rows with a ranking of 1 (spammer) or 0 (unknown)
+    result = result[result['ranking'] != 1]
+    result = result[result['ranking'] != 0]
+
     result.drop(
         columns=['tags', 'Company', 'Lead_Number', 'Lead_Source', 'Lead_Status',
                  'phone_zl', 'email_ghlc', 'phone_ghlc', 'contactName_ghlc', 
